@@ -18,7 +18,9 @@ public class Test {
         while (true) {
             System.out.println("Please enter the name Strategy you wish to use: ");
             String strategyName = scanner.nextLine();
-            Class statrategyClassName = Class.forName(strategyName);
+//            Class statrategyClassName = Class.forName(strategyName);
+            Class statrategyClassName = Class.forName("StratergyImp" + strategyName);
+
             Strategy strategy = (Strategy) statrategyClassName.newInstance();
             context.setStrategy(strategy);
             context.applyStrategy();
